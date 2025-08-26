@@ -3,9 +3,8 @@ from pathlib import Path
 import convertapi
 import requests
 
-CONVERTAPI_CREDENTIALS = 'k74ypRIui9CoQHi3puVYDr1yynlU2qWj'
-PDFENDPOINT_API_KEY = 'pdfe_live_4bbfaaadc24edf32d1029536bffc3463f560'
-
+CONVERTAPI_CREDENTIALS = os.getenv("CONVERTAPI_CREDENTIALS")
+PDFENDPOINT_API_KEY = os.getenv("PDFENDPOINT_API_KEY")
 
 def convert_md_to_html(md_file_path, output_filename=None, api_credentials=None):
     """

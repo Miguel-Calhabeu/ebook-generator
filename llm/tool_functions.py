@@ -6,7 +6,7 @@ from typing import List, Dict
 from openai import OpenAI
 from trafilatura import extract
 
-SERP_API_KEY = "081ce010453aa85135219ca5e575bc082552f04348f6e775261135d54d4d56e2"
+SERP_API_KEY = os.getenv("SERP_API_KEY")
 
 def web_fetch(query: str, n_sources: int = 3, max_content_length: int = 5000) -> dict:
     """
