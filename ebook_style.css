@@ -1,0 +1,223 @@
+/* ========================================
+   EBOOK MINIMALISTA - MARGENS REDUZIDAS
+   ======================================== */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configurações globais - MARGENS AJUSTADAS */
+:root {
+    --cor-primaria: #2c3e50;
+    --cor-secundaria: #34495e;
+    --cor-texto: #333333;
+    --cor-texto-claro: #666666;
+    --cor-borda: #e0e0e0;
+    --cor-fundo: #ffffff;
+    --cor-acento: #3498db;
+
+    --fonte-principal: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+    --fonte-monospace: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+
+    /* MARGENS REDUZIDAS - valores em centímetros */
+    --margem-top: 1.5cm;
+    --margem-bottom: 1.5cm;
+    --margem-left: 1.5cm;
+    --margem-right: 1.5cm;
+
+    --espacamento-linha: 1.5;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    font-size: 11pt;
+    line-height: var(--espacamento-linha);
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo);
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Cabeçalhos com espaçamento ajustado */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--cor-primaria);
+    margin-top: 1.2em;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 20pt;
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 0.2em;
+    margin-top: 0;
+    page-break-after: avoid;
+}
+
+h2 {
+    font-size: 16pt;
+    color: var(--cor-secundaria);
+    margin-top: 1em;
+    page-break-after: avoid;
+}
+
+h3 {
+    font-size: 13pt;
+    font-weight: 500;
+}
+
+h4, h5, h6 {
+    font-size: 11pt;
+    font-weight: 500;
+    color: var(--cor-texto-claro);
+}
+
+/* Parágrafos com espaçamento compacto */
+p {
+    margin-bottom: 0.8em;
+    text-align: justify;
+    hyphens: auto;
+}
+
+/* Listas com espaçamento reduzido */
+ul, ol {
+    margin: 0.8em 0;
+    padding-left: 1.5em;
+}
+
+li {
+    margin-bottom: 0.3em;
+}
+
+/* Citações mais compactas */
+blockquote {
+    border-left: 2px solid var(--cor-acento);
+    padding-left: 1em;
+    margin: 1em 0;
+    font-style: italic;
+    color: var(--cor-texto-claro);
+    background-color: #f9f9f9;
+    padding: 0.8em 1em;
+}
+
+/* Código com tamanho reduzido */
+code {
+    font-family: var(--fonte-monospace);
+    font-size: 0.85em;
+    background-color: #f5f5f5;
+    padding: 0.15em 0.3em;
+    border-radius: 2px;
+    color: var(--cor-secundaria);
+}
+
+pre {
+    font-family: var(--fonte-monospace);
+    font-size: 0.8em;
+    line-height: 1.3;
+    background-color: #f8f9fa;
+    padding: 0.8em;
+    border-radius: 3px;
+    margin: 1em 0;
+    border: 1px solid var(--cor-borda);
+}
+
+/* Tabelas mais compactas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+    font-size: 0.9em;
+}
+
+th, td {
+    padding: 0.5em;
+    text-align: left;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+/* Imagens com margens reduzidas */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+    border-radius: 3px;
+}
+
+/* Separadores mais sutis */
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--cor-borda);
+    margin: 1.5em 0;
+}
+
+/* Configurações de impressão - MARGENS AJUSTADAS */
+@page {
+    margin-top: var(--margem-top);
+    margin-bottom: var(--margem-bottom);
+    margin-left: var(--margem-left);
+    margin-right: var(--margem-right);
+    size: A4;
+}
+
+@page :first {
+    margin-top: 2cm; /* Primeira página com margem superior maior */
+}
+
+/* Página de título mais compacta */
+.title-page {
+    text-align: center;
+    margin-bottom: 1.5em;
+    page-break-after: always;
+}
+
+.title-page h1 {
+    font-size: 22pt;
+    margin-bottom: 0.3em;
+    border-bottom: none;
+}
+
+.title-page .subtitle {
+    font-size: 14pt;
+    color: var(--cor-texto-claro);
+    margin-bottom: 1.5em;
+}
+
+.title-page .author {
+    font-size: 12pt;
+    color: var(--cor-texto-claro);
+}
+
+/* Evitar quebras desagradáveis (mantido) */
+h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+}
+
+p, blockquote, pre, ul, ol, table {
+    page-break-inside: avoid;
+}
+
+/* Ajustes adicionais para melhor aproveitamento do espaço */
+.chapter {
+    page-break-before: always;
+}
+
+.chapter:first-child {
+    page-break-before: avoid;
+}
+
+/* Versão ultra-compacta (opcional) */
+/*
+:root {
+    --margem-top: 1cm;
+    --margem-bottom: 1cm;
+    --margem-left: 1cm;
+    --margem-right: 1cm;
+}
+*/
